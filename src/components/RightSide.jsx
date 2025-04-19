@@ -4,7 +4,7 @@ import "../App.css";
 const RightSide = ({ itemId }) => {
   const [data, setData] = useState([]);
 
-  const api = "aa485bdce5bd4a90b971ff8119f25a82";
+  const api = "2e186a9079d34f88af427f6505976e1b";
   const link = `https://api.spoonacular.com/recipes/${itemId}/information?apiKey=${api}`;
 
   useEffect(() => {
@@ -14,7 +14,6 @@ const RightSide = ({ itemId }) => {
       .catch((err) => console.log(err));
   }, [itemId]);
 
-  console.log(data);
   return (
     <div className="right-side-container">
       <div className="ingredients-card">

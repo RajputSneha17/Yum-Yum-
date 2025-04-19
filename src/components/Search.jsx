@@ -5,7 +5,7 @@ const Search = () => {
   const [query, setQuery] = useState("pizza");
   const [data, setData] = useState([]);
   const [itemId, setitemId] = useState("658615");
-  const apiKey = "aa485bdce5bd4a90b971ff8119f25a82";
+  const apiKey = "2e186a9079d34f88af427f6505976e1b";
 
   const scrollToRightSide = () => {
     const section = document.getElementById("rightSide");
