@@ -14,6 +14,7 @@ const RightSide = ({ itemId }) => {
       .catch((err) => console.log(err));
   }, [itemId]);
 
+  console.log(data);
   return (
     <div className="right-side-container">
       <div className="ingredients-card">
@@ -24,6 +25,7 @@ const RightSide = ({ itemId }) => {
             <li>⌚ {data.readyInMinutes} Minutes</li>
             <li>👩‍👧‍👦 Serves {data.servings}</li>
             <li>{data.vegetarian ? "☘️ vegetarian" : "🍖 non-vegetarian"}</li>
+            <li>{data.vegan ? "🐄 Vegan" : null}</li>
           </ul>
           <h6 className="price">${data.pricePerServing} Per Serving</h6>
         </div>
