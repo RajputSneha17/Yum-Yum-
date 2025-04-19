@@ -7,6 +7,13 @@ const Search = () => {
   const [itemId, setitemId] = useState("658615");
   const apiKey = "aa485bdce5bd4a90b971ff8119f25a82";
 
+  const scrollToRightSide = () => {
+    const section = document.getElementById("rightSide");
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   useEffect(() => {
     fetch(
       `https://api.spoonacular.com/recipes/complexSearch?apiKey=${apiKey}&query=${query}`
@@ -36,17 +43,21 @@ const Search = () => {
               <div className="card-title">{item.title}</div>
               <button
                 className="card-button"
-                onClick={() => setitemId(item.id)}
+                onClick={() => {
+                  setitemId(item.id);
+                  scrollToRightSide();
+                }}
               >
                 Check Recipe
               </button>
             </div>
           ))}
         </div>
-
-        <div className="search-right-side">
-          <RightSide itemId={itemId} />
-        </div>
+        <section id="rightSide">
+          <div className="search-right-side">
+            <RightSide itemId={itemId} />
+          </div>
+        </section>
       </div>
     </div>
   );
